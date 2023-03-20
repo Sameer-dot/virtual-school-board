@@ -1,0 +1,48 @@
+.hero-text{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 50px;
+  color: #fff;
+  text-align: left;
+}
+
+.hero-detail{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+
+.hero-btn{
+  border: none;
+  width: 220px;
+  height: 60px;
+  background: #F53838;
+  border-radius: 12px;
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+.image{
+  width: 440px;
+  height: 440px;
+}
+
+.features-text {
+  @extend .hero-text;
+  font-size: 46px;
+}
+
+.features-detail {
+  @extend .hero-detail;
+  font-size: 22px;
+}
