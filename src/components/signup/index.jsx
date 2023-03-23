@@ -79,7 +79,9 @@ const Login = () => {
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
-                        <button onClick={userLogin} className="btn btn-primary orange_background">
+                        <button onClick={userLogin} className="btn btn-primary orange_background"
+                            style={{ backgroundColor: "#F53838",
+                            borderColor: "#F53838"}}>
                             Login
                         </button>
                     </div>

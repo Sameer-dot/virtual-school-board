@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import LandingPage from "./components/landing-page/LandingPage";
+import Login from "./components/login";
 
 function App() {
   
@@ -31,7 +32,7 @@ function App() {
           </div>
         </div>
       )}
-      {!isLoading && <div><LandingPage /></div>}
+      {!isLoading && <div><Login /></div>}
     </div>
   );
 }
