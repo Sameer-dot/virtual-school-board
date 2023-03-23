@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landing-page/LandingPage";
 import Login from "./components/login";
 
@@ -32,7 +33,13 @@ function App() {
           </div>
         </div>
       )}
-      {!isLoading && <div><Login /></div>}
+      {!isLoading && (
+        <Router>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+          </Routes>
+        </Router>
+      )}
     </div>
   );
 }
