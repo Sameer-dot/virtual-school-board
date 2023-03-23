@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landing-page/LandingPage";
 
 function App() {
@@ -31,7 +32,13 @@ function App() {
           </div>
         </div>
       )}
-      {!isLoading && <div><LandingPage /></div>}
+      {!isLoading && (
+        <Router>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+          </Routes>
+        </Router>
+      )}
     </div>
   );
 }

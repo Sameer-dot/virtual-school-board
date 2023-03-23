@@ -1,0 +1,45 @@
+.user-img{
+  width: 50px;
+  padding-right: 12px;
+}
+.text-pr{
+  margin-right: 0%;
+}
+
+.r-name{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.l-name{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  color: #4F5665;
+}
+
+.rating{
+  position: absolute;
+  right: 0px;
+  align-items: center;
+
+  img{
+    width: 20px;
+  }
+}
+
+.rating-desc{
+  padding-top: 30px;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #0B132A;
+  text-align: justify;
+}
