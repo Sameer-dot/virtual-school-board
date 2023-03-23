@@ -3,7 +3,7 @@ import "./index.scss";
 
 function ReviewCard({ ...props }) {
   return (
-    <Card style={{ width: "300px", height: "200px",marginRight: "30px", }}>
+    <Card style={{ width: "300px", height: "180px",marginRight: "30px", }}>
       <Card.Body>
         <div className="d-flex align-items-center w-100" style={{position: "relative"}}>
           <img className="user-img" src={props.data.img} alt="ima" />
