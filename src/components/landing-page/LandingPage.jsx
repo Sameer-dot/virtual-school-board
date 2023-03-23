@@ -8,7 +8,8 @@ import Check from "../../assets/icons/check.svg";
 import star from "../../assets/icons/star.png";
 
 import ReviewCard from "./../Review-Card/ReviewCard";
-
+import Header from "./../header/header";
+import Footer from "./../footer/footer";
 import "./index.scss";
 
 const featureNames = [
@@ -47,78 +48,82 @@ const reviewData = [
 
 const LandingPage = () => {
   return (
-    <div className="bg-black">
-      <div className="container">
-        <div className="main-section">
-          <div className="d-flex justify-content-between align-items-center w-100">
-            <div className="d-flex flex-column mr-3 w-50">
-              <h1 className="hero-text pb-2">
-                Want teaching to be easy with <strong>VSB</strong>.
-              </h1>
-              <p className="hero-detail pb-4">
-                A simple and better tool to make your lecture more creative and
-                valuable.
-              </p>
-              <button className="hero-btn">Get Started</button>
-            </div>
-            <div className="img-section">
-              <img
-                src={Illustration_1}
-                alt="illustration 1"
-                className="image"
-              />
+    <>
+      <Header />
+      <div className="bg-black">
+        <div className="container">
+          <div className="main-section">
+            <div className="d-flex justify-content-between align-items-center w-100">
+              <div className="d-flex flex-column mr-3 w-50">
+                <h1 className="hero-text pb-2">
+                  Want teaching to be easy with <strong>VSB</strong>.
+                </h1>
+                <p className="hero-detail pb-4">
+                  A simple and better tool to make your lecture more creative
+                  and valuable.
+                </p>
+                <button className="hero-btn">Get Started</button>
+              </div>
+              <div className="img-section">
+                <img
+                  src={Illustration_1}
+                  alt="illustration 1"
+                  className="image"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="secondary-section">
-          <div className="d-flex justify-content-between align-items-center w-100">
-            <div className="img-section">
-              <img
-                src={Illustration_2}
-                alt="illustration 2"
-                className="image"
-              />
+          <div className="secondary-section">
+            <div className="d-flex justify-content-between align-items-center w-100">
+              <div className="img-section">
+                <img
+                  src={Illustration_2}
+                  alt="illustration 2"
+                  className="image"
+                />
+              </div>
+              <div className="d-flex flex-column mr-3 w-50">
+                <h1 className="features-main-text pb-2">
+                  We Provide Many Features You Can Use.
+                </h1>
+                <p className="features-detail pb-4">
+                  You can explore the features that we provide with fun and have
+                  their own functions each feature.
+                </p>
+                <div className="d-flex flex-column justify-content-center align-items-left">
+                  {featureNames.map((name) => (
+                    <div
+                      key={"name_" + name}
+                      className="d-flex align-items-center"
+                    >
+                      <img src={Check} alt="check" className="pr-4" />
+                      <p className="features-text">{name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="d-flex flex-column mr-3 w-50">
-              <h1 className="features-main-text pb-2">
-                We Provide Many Features You Can Use.
+          </div>
+          <div className="reviews-section pb-4">
+            <div className="d-flex flex-column align-items-center justify-content-center">
+              <h1 className="reviews-main-text pb-2">
+                Trusted by Thousands of Happy Customer
               </h1>
-              <p className="features-detail pb-4">
-                You can explore the features that we provide with fun and have
-                their own functions each feature.
+              <p className="reviews-detail pb-4">
+                These are the stories of our customers who have joined us with
+                great pleasure when using this crazy feature.
               </p>
-              <div className="d-flex flex-column justify-content-center align-items-left">
-                {featureNames.map((name) => (
-                  <div
-                    key={"name_" + name}
-                    className="d-flex align-items-center"
-                  >
-                    <img src={Check} alt="check" className="pr-4" />
-                    <p className="features-text">{name}</p>
-                  </div>
+              <div className="d-flex justigfy-content-between align-items-center">
+                {reviewData.map((data, index) => (
+                  <ReviewCard key={index + "card"} data={data} star={star} />
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="reviews-section">
-          <div className="d-flex flex-column align-items-center justify-content-center">
-            <h1 className="reviews-main-text pb-2">
-              Trusted by Thousands of Happy Customer
-            </h1>
-            <p className="reviews-detail pb-4">
-              These are the stories of our customers who have joined us with
-              great pleasure when using this crazy feature.
-            </p>
-            <div className="d-flex justigfy-content-between align-items-center">
-              {reviewData.map((data, index) => (
-                <ReviewCard key={index + "card"} data={data} star={star} />
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
