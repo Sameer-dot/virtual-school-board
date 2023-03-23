@@ -104,7 +104,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="reviews-section pb-4">
+          <div className="reviews-section" style={{paddingBottom: "60px"}}>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <h1 className="reviews-main-text pb-2">
                 Trusted by Thousands of Happy Customer

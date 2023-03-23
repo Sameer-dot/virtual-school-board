@@ -1,10 +1,12 @@
 import {useState} from "react";
 import { Link } from 'react-router-dom'
 import login from "../../assets/images/login.svg";
+import { useNavigate } from "react-router-dom";
 
 import './index.scss'
 
 const Login = () => {
+    const navigate = useNavigate();
 
   const [creds, setCreds] = useState({
     email:"",
@@ -86,21 +88,21 @@ const Login = () => {
                         </button>
                     </div>
                     <p className="text-center mt-2">
-                        Already have an account ? <a href="#" className="orange_text">Login</a>
+                        Already have an account ? <span onClick={()=>navigate("/login")} className="orange_text">Login</span>
                     </p>
                     </div>
                 </div>
                 </div>
 
             <div className="col-md-6 d-flex align-items-around justify-content-around content_container">
-                <div className="">
+                <div className="d-flex flex-column justify-content-center align-items-left w-100">
                     <div className="img">
                         <img src={login} alt="login" />
                     </div>
-                    <h1 className="heading pt-3">
+                    <h1 className="heading w-100 mt-2" style={{paddingLeft: "164px"}}>
                         Virtual School Board
                     </h1>
-                    <p className="white_text">
+                    <p className="whitee_text">
                         Join us to get access to the <span className="orange_text">first</span> & 
                         <span className="orange_text"> only </span> 
                         Virtual Board that can be used by your
