@@ -10,6 +10,9 @@ import star from "../../assets/icons/star.png";
 import ReviewCard from "./../Review-Card/ReviewCard";
 import Header from "./../header/header";
 import Footer from "./../footer/footer";
+
+import {useNavigate} from "react-router-dom";
+
 import "./index.scss";
 
 const featureNames = [
@@ -47,6 +50,7 @@ const reviewData = [
 ];
 
 const LandingPage = () => {
+  const navigate = useNavigate(); 
   return (
     <>
       <Header />
@@ -62,7 +66,7 @@ const LandingPage = () => {
                   A simple and better tool to make your lecture more creative
                   and valuable.
                 </p>
-                <button className="hero-btn">Get Started</button>
+                <button className="hero-btn" onClick={() => navigate("/jam-board")}>Get Started</button>
               </div>
               <div className="img-section">
                 <img
@@ -104,7 +108,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="reviews-section" style={{paddingBottom: "60px"}}>
+          <div className="reviews-section" style={{paddingBottom: "80px"}}>
             <div className="d-flex flex-column align-items-center justify-content-center">
               <h1 className="reviews-main-text pb-2">
                 Trusted by Thousands of Happy Customer
