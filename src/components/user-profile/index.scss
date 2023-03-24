@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+    height: 100vh;
+}
+
+.main-container{
+    background-color: black;
+}
+
+.profile-image{
+    height: 250px;
+    width: auto;
+    margin: 75px;
+    border-radius: 50px;
+}
+
+.profile-img{
+    position: relative;
+    text-align: center;
+    color: white;  
+}
+
+.img_text{
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+table{
+    margin: 0 auto;
+    color: white;
+}
+
+.profile_details{
+    margin-left: 100px;
+}
+
+.white{
+    color: white;
+}
+
+input { 
+    text-align: right; 
+}
