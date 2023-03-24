@@ -19,7 +19,6 @@ function Header() {
             <Nav.Link href="/"></Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/features">Features</Nav.Link>
             <Nav.Link href="/jam-board">Jamboard</Nav.Link>
             <NavDropdown title="User" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
