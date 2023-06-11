@@ -1,15 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import login from "../../assets/images/login.svg";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../../features/auth/authSlice.js";
+import Spinner from "./Spinner";
 import "./index.scss";
 
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess || user) {
+      navigate("/login");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const [creds, setCreds] = useState({
     email: "",
@@ -27,6 +45,10 @@ const Login = () => {
         dispatch(register({email: creds.email,username: creds.username, password: creds.password}));
     }
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="main_container">
