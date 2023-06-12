@@ -1,19 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState, } from "react";
 import { Link } from "react-router-dom";
-import login from "../../assets/images/login.svg";
+import login_img from "../../assets/images/login.svg";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../../features/auth/authSlice.js";
 
 import "./index.scss";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [creds, setCreds] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
-  const userLogin = () => {};
+
+  const userLogin = async() => {
+    if(creds.email === "" || creds.password === ""){
+        console.log("empty!")
+    } else{
+        const result = await dispatch(login({username: creds.username, password: creds.password}));
+        if(result.payload.id){
+          console.log("login success")
+        }
+    }
+  };
 
   return (
     <div className="main_container">
@@ -33,14 +46,14 @@ const Login = () => {
                   </span>
                 </div>
                 <div className="form-group mt-3">
-                  <label>Email address</label>
+                  <label>Username</label>
                   <input
                     type="email"
                     className="form-control mt-1"
-                    placeholder="Enter email"
-                    value={creds.email}
+                    placeholder="Enter username"
+                    value={creds.username}
                     onChange={(e) => {
-                      setCreds({ ...creds, email: e.target.value });
+                      setCreds({ ...creds, username: e.target.value });
                     }}
                   />
                 </div>
@@ -50,7 +63,7 @@ const Login = () => {
                     type="password"
                     className="form-control mt-1"
                     placeholder="Enter password"
-                    value={creds.email}
+                    value={creds.password}
                     onChange={(e) => {
                       setCreds({ ...creds, password: e.target.value });
                     }}
@@ -80,7 +93,7 @@ const Login = () => {
           <div className="col-md-6 d-flex align-items-around justify-content-around content_container">
             <div className="">
               <div className="img">
-                <img src={login} alt="login" />
+                <img src={login_img} alt="login" />
               </div>
               <h1 className="heading pt-3 w-100" style={{ paddingLeft: "164px" }}>
                 Virtual School Board
