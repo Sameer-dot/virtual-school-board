@@ -48,6 +48,7 @@ const reviewData = [
     rating: "4.8",
   },
 ];
+console.log("Hello");
 
 const LandingPage = () => {
   const navigate = useNavigate(); 
