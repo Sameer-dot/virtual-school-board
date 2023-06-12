@@ -1,3 +1,5 @@
+import "./index.scss";
+
 function Spinner() {
   return (
     <div className="loadingSpinnerContainer">
